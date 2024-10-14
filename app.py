@@ -7,11 +7,13 @@ from datetime import datetime, date
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
 
 def get_authorization_token():
-    token_url = "https://www.united.com/api/auth/refresh-token"
+    token_url = "https://www.united.com/api/svc/token/anonymous"
     headers = {
         'User-Agent': USER_AGENT,
         'Accept': 'application/json',
-        'Accept-Language': 'en-US'
+        'Accept-Language': 'en-US',
+        'dnt': '1',
+        'referer': 'https://www.united.com/en/us',
     }
     response = requests.get(token_url, headers=headers)
     if response.status_code == 200:
