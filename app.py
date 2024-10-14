@@ -7,7 +7,7 @@ from datetime import datetime, date
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36'
 
 def get_authorization_token():
-    token_url = "https://www.united.com/api/auth/anonymous-token"
+    token_url = "https://www.united.com/api/auth/refresh-token"
     headers = {
         'User-Agent': USER_AGENT,
         'Accept': 'application/json',
